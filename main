@@ -1,0 +1,189 @@
+local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
+
+local Window = Rayfield:CreateWindow({
+    Name = "rex plnd's workshop hub",
+    LoadingTitle = "rex plnd's workshop hub",
+    LoadingSubtitle = "by rex",
+    ConfigurationSaving = {
+       Enabled = true,
+       FolderName = nil, -- Create a custom folder for your hub/game
+       FileName = "Big Hub"
+    },
+    Discord = {
+       Enabled = false,
+       Invite = "noinvitelink", -- The Discord invite code, do not include discord.gg/. E.g. discord.gg/ABCD would be ABCD
+       RememberJoins = true -- Set this to false to make them join the discord every time they load it up
+    },
+    KeySystem = true, -- Set this to true to use our key system
+    KeySettings = {
+       Title = "rex key's system",
+       Subtitle = "Key System",
+       Note = "Do you know the key it's rexhub2024?",
+       FileName = "Key", -- It is recommended to use something unique as other scripts using Rayfield may overwrite your key file
+       SaveKey = true, -- The user's key will be saved, but if you change the key, they will be unable to use your script
+       GrabKeyFromSite = false, -- If this is true, set Key below to the RAW site you would like Rayfield to get the key from
+       Key = {"rexhub2024"} -- List of keys that will be accepted by the system, can be RAW file links (pastebin, github etc) or simple strings ("hello","key22")
+    }
+ })
+
+ local PlayerTab = Window:CreateTab("Utility", 4483362458) -- Title, Image
+
+ local TpTab = Window:CreateTab("Teleports", 4483362458) -- Title, Image
+
+ local CodesTab = Window:CreateTab("Codes", 4483362458) -- Title, Image
+
+ -- tabs
+
+ local Button = PlayerTab:CreateButton({
+   Name = "auto bubble (rejoin to stop)",
+   Callback = function()
+      while wait(0) do
+         local args = {
+             [1] = "BlowBubble"
+         }
+         
+         game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
+         end
+   end,
+})
+
+local Toggle = PlayerTab:CreateToggle({
+   Name = "Faster Release Egg Hatch",
+   CurrentValue = false,
+   Flag = "Toggle1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Value)
+      while wait(0) do
+         local args = {
+             [1] = "PurchaseEgg",
+             [2] = "Release Egg",
+             [3] = "Multi"
+         }
+         game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
+         end
+   end,
+})
+
+local Button = PlayerTab:CreateButton({
+   Name = "above u need to be close to egg",
+   Callback = function()
+      local args = {
+         [1] = "ClaimAchievement",
+         [2] = 1
+     }
+     
+     game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
+   end,
+})
+
+ local Button = PlayerTab:CreateButton({
+   Name = "Farm Gems Achievement (auto bb and good pets needed)",
+   Callback = function()
+      local args = {
+         [1] = "ClaimAchievement",
+         [2] = 1
+     }
+     
+     game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
+   end,
+})
+
+
+ -- playertab above
+
+ local Button = TpTab:CreateButton({
+    Name = "Island 1",
+    Callback = function()
+      local args = {
+         [1] = "TeleportToCheckpoint",
+         [2] = "The Floating Island"
+     }
+     
+     game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
+    end,
+ })
+
+  local Button = TpTab:CreateButton({
+    Name = "Island 2",
+    Callback = function()
+      local args = {
+         [1] = "TeleportToCheckpoint",
+         [2] = "Space"
+     }
+     
+     game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
+    end,
+ })
+
+ local Button = TpTab:CreateButton({
+   Name = "Island 3",
+   Callback = function()
+     local args = {
+        [1] = "TeleportToCheckpoint",
+        [2] = "The Twilight"
+    }
+    
+    game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
+   end,
+})
+
+local Button = TpTab:CreateButton({
+   Name = "Island 4",
+   Callback = function()
+     local args = {
+        [1] = "TeleportToCheckpoint",
+        [2] = "The Skylands"
+    }
+    
+    game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
+   end,
+})
+
+local Button = TpTab:CreateButton({
+   Name = "Island 5",
+   Callback = function()
+     local args = {
+        [1] = "TeleportToCheckpoint",
+        [2] = "The Void"
+    }
+    
+    game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
+   end,
+})
+
+-- tp tab above
+
+local Button = CodesTab:CreateButton({
+   Name = "Code 1",
+   Callback = function()
+      local args = {
+         [1] = "Redeem Code",
+         [2] = "100HourLuck"
+     }
+     
+     game:GetService("Players").LocalPlayer:WaitForChild("ClientScript")
+   end,
+})
+
+local Button = CodesTab:CreateButton({
+   Name = "Code 2",
+   Callback = function()
+      local args = {
+         [1] = "Redeem Code",
+         [2] = "SorryForTheBugs"
+     }
+     
+     game:GetService("Players").LocalPlayer:WaitForChild("ClientScript")
+   end,
+})
+
+local Button = CodesTab:CreateButton({
+   Name = "Code 3",
+   Callback = function()
+      local args = {
+         [1] = "Redeem Code",
+         [2] = "MoreBugFixes"
+     }
+     
+     game:GetService("Players").LocalPlayer:WaitForChild("ClientScript")
+   end,
+})
