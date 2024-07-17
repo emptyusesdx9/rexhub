@@ -1,8 +1,8 @@
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
 local Window = Rayfield:CreateWindow({
-    Name = "plnd's workshop hub",
-    LoadingTitle = "plnd's workshop hub",
+    Name = "plnd's workshop hub v1.2",
+    LoadingTitle = "plnd's workshop hub v1.2",
     LoadingSubtitle = "by rex",
     ConfigurationSaving = {
        Enabled = true,
@@ -155,7 +155,7 @@ local Button = CodesTab:CreateButton({
 })
 
 local Button = CodesTab:CreateButton({
-   Name = "Code 4",
+   Name = "Code 4 (NEW)",
    Callback = function()
       local args = {
          [1] = "Redeem Code",
@@ -167,11 +167,23 @@ local Button = CodesTab:CreateButton({
 })
 
 local Button = CodesTab:CreateButton({
-   Name = "Code 4",
+   Name = "Code 5 (NEW)",
    Callback = function()
       local args = {
          [1] = "Redeem Code",
          [2] = "Update1"
+     }
+     
+     game:GetService("Players").LocalPlayer:WaitForChild("ClientScript")
+   end,
+})
+
+local Button = CodesTab:CreateButton({
+   Name = "Code 6(NEW)",
+   Callback = function()
+      local args = {
+         [1] = "Redeem Code",
+         [2] = "SmallBugFix"
      }
      
      game:GetService("Players").LocalPlayer:WaitForChild("ClientScript")
