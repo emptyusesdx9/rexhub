@@ -1,0 +1,38 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("rex dupe's hub", "Midnight")
+
+local DupeTab = Window:NewTab("Dupe")
+
+local Section = DupeTab:NewSection("warning: i don't responsabilize if u get banned, use on alts")
+
+Section:NewButton("Step 1", "Click on it.", function()
+    function Death()
+        spawn(function()
+local args = {
+    [1] = "GetPlayerData"
+}
+
+game:GetService("ReplicatedStorage").NetworkRemoteFunction:InvokeServer(unpack(args))
+end)
+end
+end)
+
+Section:NewButton("Step 2", "Click on it.", function()
+    function Death()
+        spawn(function()
+local args = {
+    [1] = "DefaultData"
+}
+
+game:GetService("ReplicatedStorage").NetworkRemoteFunction:InvokeServer(unpack(args))
+end)
+end
+end)
+
+Section:NewButton("Step 3 (WHEN TRADE DONE USE IT INSTANTLY)", "click on it", function()
+    game.players.LocalPlayer:Kick()
+end)
+
+Section:NewButton("youtu.be/XOB7UzRhbdg?si=HoZFCha2lhhO9Z8m", "https://youtu.be/XOB7UzRhbdg?si=HoZFCha2lhhO9Z8m", function()
+    print("https://youtu.be/XOB7UzRhbdg?si=HoZFCha2lhhO9Z8m")
+end)
