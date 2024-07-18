@@ -1,0 +1,307 @@
+local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
+
+local Window = Rayfield:CreateWindow({
+    Name = "plnd's workshop hub v1.2",
+    LoadingTitle = "plnd's workshop hub v1.2",
+    LoadingSubtitle = "by rex",
+    ConfigurationSaving = {
+       Enabled = true,
+       FolderName = rexhub, -- Create a custom folder for your hub/game
+       FileName = "plndworkshophub"
+    },
+    Discord = {
+       Enabled = false,
+       Invite = "noinvitelink", -- The Discord invite code, do not include discord.gg/. E.g. discord.gg/ABCD would be ABCD
+       RememberJoins = true -- Set this to false to make them join the discord every time they load it up
+    },
+    KeySystem = false, -- Set this to true to use our key system
+    KeySettings = {
+       Title = "rex key's system",
+       Subtitle = "Key System",
+       Note = "!!USE THIS IN A PRIVATE SERVER!!",
+       FileName = "Key", -- It is recommended to use something unique as other scripts using Rayfield may overwrite your key file
+       SaveKey = true, -- The user's key will be saved, but if you change the key, they will be unable to use your script
+       GrabKeyFromSite = false, -- If this is true, set Key below to the RAW site you would like Rayfield to get the key from
+       Key = {"skibidi"} -- 
+    }
+ })
+
+ local PlayerTab = Window:CreateTab("🔧 Utility") -- Title, Image
+
+ local TpTab = Window:CreateTab("🏝️ Teleports") -- Title, Image
+
+ local EggsTab = Window:CreateTab("🥚 Eggs") -- Title, Image
+
+ local DupeTab = Window:CreateTab("💱 Dupe (DISABLED)") -- Title, Image
+
+ local MiscTab = Window:CreateTab("🪝Misc") -- Title, Image
+ -- tabs
+
+ local Toggle = PlayerTab:CreateToggle({
+   Name = "Auto Bubble",
+   CurrentValue = false,
+   Flag = "Toggle1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Value)
+      while true do
+         local args = {
+             [1] = "BlowBubble"
+         }
+         
+         game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
+         wait(.0001)
+      end
+   end,
+})
+
+
+ -- playertab above
+
+ local Button = TpTab:CreateButton({
+   Name = "Spawn",
+   Callback = function()
+      local rootPart = game.Players.LocalPlayer.Character.HumanoidRootPart
+      rootPart.CFrame = CFrame.new(18.6001358, 176.256058, 78.496666, 0.880221367, 0, 0.474563271, 0, 1, 0, -0.474563271, 0, 0.880221367)
+   end,
+})
+
+
+ local Button = TpTab:CreateButton({
+    Name = "The Floating Island",
+    Callback = function()
+      local rootPart = game.Players.LocalPlayer.Character.HumanoidRootPart
+      rootPart.CFrame = CFrame.new(-41.1414948, 580.598206, 98.1251984, 0.217957973, 0.000121341822, -0.975958347, -1.33846115e-05, 1, 0.000121341822, 0.975958347, -1.33846115e-05, 0.217957973)
+    end,
+ })
+
+  local Button = TpTab:CreateButton({
+    Name = "Space",
+    Callback = function()
+      local rootPart = game.Players.LocalPlayer.Character.HumanoidRootPart
+      rootPart.CFrame = CFrame.new(-104.752266, 2862.55249, -70.4299164, -0.973974109, 0, -0.226659775, 0, 1, 0, 0.226659775, 0, -0.973974109)
+    end,
+ })
+
+ local Button = TpTab:CreateButton({
+   Name = "The Twilight",
+   Callback = function()
+      local rootPart = game.Players.LocalPlayer.Character.HumanoidRootPart
+      rootPart.CFrame = CFrame.new(-58.9713135, 5120.8418, -101.203941, 0.22399205, 0, 0.974591017, 0, 1, 0, -0.974591017, 0, 0.22399205)
+   end,
+})
+
+local Button = TpTab:CreateButton({
+   Name = "The Skylands",
+   Callback = function()
+      local rootPart = game.Players.LocalPlayer.Character.HumanoidRootPart
+      rootPart.CFrame = CFrame.new(222.781509, 7002.17773, -177.036316, -0.643711329, 0, 0.765268445, 0, 1, 0, -0.765268445, 0, -0.643711329)
+   end,
+})
+
+local Button = TpTab:CreateButton({
+   Name = "The Void",
+   Callback = function()
+      local rootPart = game.Players.LocalPlayer.Character.HumanoidRootPart
+      rootPart.CFrame = CFrame.new(-75.5312805, 11339.2705, -183.84227, -0.724892378, -8.01655115e-05, 0.688862205, -8.01655115e-05, 1, 3.20153231e-05, -0.688862205, -3.20153231e-05, -0.724892378)
+   end,
+})
+
+-- tp tab above
+
+local Button = PlayerTab:CreateButton({
+   Name = "Auto Claim All Achievements",
+   Callback = function()
+      while wait(0) do
+         local args = {
+            [1] = "ClaimAchievement",
+            [2] = 1
+        }
+         game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
+local args = {
+            [1] = "ClaimAchievement",
+            [2] = 2
+            }
+        game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
+        local args = {
+            [1] = "ClaimAchievement",
+            [2] = 3
+            }
+        game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
+        local args = {
+            [1] = "ClaimAchievement",
+            [2] = 4
+            }
+        game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
+        local args = {
+            [1] = "ClaimAchievement",
+            [2] = 5
+            }
+        game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
+      end
+   end,
+})
+
+local Toggle = PlayerTab:CreateToggle({
+   Name = "Auto Pickup Orbs (DISABLED!)",
+   CurrentValue = false,
+   Flag = "Toggle1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Value)
+      local rootPart = game.Players.LocalPlayer.Character.HumanoidRootPart
+      for i, v in pairs(game:GetService("Workspace").PickupSpawns.OverworldPickupSpawn:GetChildren()) do
+      if v:IsA("rootPart") then
+      rootPart.CFrame = v.CFrame wait(0.2)
+      end
+      end
+   end,
+})
+
+--gems achievement above
+
+
+local Button = EggsTab:CreateButton({
+   Name = "Teleport to Newest Egg",
+   Callback = function()
+         local rootPart = game.Players.LocalPlayer.Character.HumanoidRootPart
+         rootPart.CFrame = CFrame.new(-25.7807846, 7003.87695, -162.119415, -0.675678015, 0, 0.737196863, 0, 1, 0, -0.737196863, 0, -0.675678015)
+   end,
+})
+
+local Button = EggsTab:CreateButton({
+   Name = "Teleport to Release Egg",
+   Callback = function()
+         local rootPart = game.Players.LocalPlayer.Character.HumanoidRootPart
+         rootPart.CFrame = CFrame.new(6.08427811, 578.542358, 76.6383057, 0.990863144, -0, -0.13487114, 0, 1, -0, 0.13487114, 0, 0.990863144)
+   end,
+})
+
+
+local Toggle = EggsTab:CreateToggle({
+   Name = "Fast Hatch Newest Egg (CLOSE TO EGG)",
+   CurrentValue = false,
+   Flag = "Toggle1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Value)
+      while wait(0) do
+         local args = {
+             [1] = "PurchaseEgg",
+             [2] = "Royal Egg",
+             [3] = "Multi"
+         }
+         game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
+         end
+   end,
+})
+
+local Toggle = EggsTab:CreateToggle({
+   Name = "Fast Hatch Common Egg (CLOSE TO EGG)",
+   CurrentValue = false,
+   Flag = "Toggle1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Value)
+      while wait(0) do
+         local args = {
+             [1] = "PurchaseEgg",
+             [2] = "Common Egg",
+             [3] = "Multi"
+         }
+         game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
+         end
+   end,
+})
+
+--eggs tag above
+
+local Button = DupeTab:CreateButton({
+   Name = "Step 1 (click)",
+   Callback = function()
+      function Death()
+         spawn(function()
+ local args = {
+     [1] = "GetPlayerData"
+ }
+ 
+ game:GetService("ReplicatedStorage").NetworkRemoteFunction:InvokeServer(unpack(args))
+ end)
+ end
+   end,
+})
+
+local Button = DupeTab:CreateButton({
+   Name = "Step 2 (Click)",
+   Callback = function()
+      function Death()
+         spawn(function()
+ local args = {
+     [1] = "DefaultData"
+ }
+ 
+ game:GetService("ReplicatedStorage").NetworkRemoteFunction:InvokeServer(unpack(args))
+ end)
+ end
+   end,
+})
+
+local Button = DupeTab:CreateButton({
+   Name = "Step 3",
+   Callback = function()
+
+   end,
+})
+
+
+local Button = DupeTab:CreateButton({
+   Name = "Step 4 (WHEN TRADE DONE USE IT INSTANTLY)",
+   Callback = function()
+      game.players.LocalPlayer:Kick()
+   end,
+})
+
+
+-- dupe thing above
+
+local Button = MiscTab:CreateButton({
+   Name = "Use all Codes",
+   Callback = function()
+      local args = {
+         [1] = "Redeem Code",
+         [2] = "100HourLuck"
+     }
+     
+     game:GetService("Players").LocalPlayer:WaitForChild("ClientScript")
+     local args = {
+      [1] = "Redeem Code",
+      [2] = "SorryForTheBugs"
+  }
+  game:GetService("Players").LocalPlayer:WaitForChild("ClientScript")
+  local args = {
+   [1] = "Redeem Code",
+   [2] = "MoreBugFixes"
+}
+game:GetService("Players").LocalPlayer:WaitForChild("ClientScript")
+local args = {
+   [1] = "Redeem Code",
+   [2] = "BigBoyCode"
+}
+game:GetService("Players").LocalPlayer:WaitForChild("ClientScript")
+local args = {
+   [1] = "Redeem Code",
+   [2] = "Update1"
+}
+game:GetService("Players").LocalPlayer:WaitForChild("ClientScript")
+local args = {
+   [1] = "Redeem Code",
+   [2] = "SmallBugFix"
+}
+end,
+   })
+
+   local Button = MiscTab:CreateButton({
+      Name = "Claim All Chests",
+      Callback = function()
+         local rootPart = game.Players.LocalPlayer.Character.HumanoidRootPart
+         rootPart.CFrame = CFrame.new(-41.1414948, 580.598206, 98.1251984, 0.217957973, 0.000121341822, -0.975958347, -1.33846115e-05, 1, 0.000121341822, 0.975958347, -1.33846115e-05, 0.217957973)
+         wait(1)
+         local rootPart = game.Players.LocalPlayer.Character.HumanoidRootPart
+         rootPart.CFrame = CFrame.new(222.781509, 7002.17773, -177.036316, -0.643711329, 0, 0.765268445, 0, 1, 0, -0.765268445, 0, -0.643711329)
+         wait(1)
+         local rootPart = game.Players.LocalPlayer.Character.HumanoidRootPart
+         rootPart.CFrame = CFrame.new(-75.5312805, 11339.2705, -183.84227, -0.724892378, -8.01655115e-05, 0.688862205, -8.01655115e-05, 1, 3.20153231e-05, -0.688862205, -3.20153231e-05, -0.724892378)
+      end,
+      })
