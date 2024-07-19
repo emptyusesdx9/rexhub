@@ -1,6 +1,6 @@
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 
-local Window = OrionLib:MakeWindow({Name = "Clicker Legends Reborn ｜ by rex", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+local Window = OrionLib:MakeWindow({Name = "Clicker Legends Final ｜ by rex", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
 
 --main
 
@@ -353,67 +353,33 @@ QuestTab:AddButton({
 })
 
 QuestTab:AddButton({
-	Name = "Teleport to Gear 1",
+	Name = "Auto Get Gear",
 	Callback = function()
-        local rootPart = game.Players.LocalPlayer.Character.HumanoidRootPart
-        rootPart.CFrame = CFrame.new(166.892639, 186.718353, -126.438187, -0.989500165, 4.01130507e-08, 0.144531891, 4.11500629e-08, 1, 4.18551371e-09, -0.144531891, 1.0089062e-08, -0.989500165)
-  	end    
-})
-
-QuestTab:AddButton({
-	Name = "Teleport to Gear 2",
-	Callback = function()
-        local rootPart = game.Players.LocalPlayer.Character.HumanoidRootPart
-        rootPart.CFrame = CFrame.new(-210.610748, 506.003387, -797.677002, -0.6140728, 3.60861829e-09, -0.789249361, 4.91970376e-09, 1, 7.44456718e-10, 0.789249361, -3.42572237e-09, -0.6140728)
-  	end    
-})
-
-QuestTab:AddButton({
-	Name = "Teleport to Gear 3",
-	Callback = function()
-        local rootPart = game.Players.LocalPlayer.Character.HumanoidRootPart
-        rootPart.CFrame = CFrame.new(179.772583, 189.774185, 20.8521996, 0.530655503, 4.70743311e-09, 0.847587585, -2.52954369e-08, 1, 1.02829842e-08, -0.847587585, -2.68968208e-08, 0.530655503)
-  	end    
-})
-
-QuestTab:AddButton({
-	Name = "Teleport to Gear 4",
-	Callback = function()
-        local rootPart = game.Players.LocalPlayer.Character.HumanoidRootPart
-        rootPart.CFrame = CFrame.new(386.473969, 528.714111, -700.377808, 0.580200076, -3.6121989e-08, -0.814473987, 7.29939353e-09, 1, -3.91502759e-08, 0.814473987, 1.67698264e-08, 0.580200076)
-  	end    
-})
-
-QuestTab:AddButton({
-	Name = "Teleport to Gear 5",
-	Callback = function()
-        local rootPart = game.Players.LocalPlayer.Character.HumanoidRootPart
-        rootPart.CFrame = CFrame.new(820.642517, 617.651062, -91.1794815, 0.997249544, -3.65740549e-09, 0.0741167516, 2.70947575e-09, 1, 1.28902302e-08, -0.0741167516, -1.26539597e-08, 0.997249544)
-  	end    
-})
-
-QuestTab:AddButton({
-	Name = "Teleport to Gear 6",
-	Callback = function()
-        local rootPart = game.Players.LocalPlayer.Character.HumanoidRootPart
-        rootPart.CFrame = CFrame.new(522.770874, 655.695496, 571.117554, 0.801456094, 4.24927826e-09, -0.598053634, -1.66152692e-08, 1, -1.51610653e-08, 0.598053634, 2.20877503e-08, 0.801456094)
-  	end    
-})
-
-QuestTab:AddButton({
-	Name = "Teleport to Gear 7",
-	Callback = function()
-        local rootPart = game.Players.LocalPlayer.Character.HumanoidRootPart
-        rootPart.CFrame = CFrame.new(-200.260056, 752.491028, 804.539368, 0.948221266, -3.27307106e-08, 0.317610562, 3.23486056e-08, 1, 6.47672582e-09, -0.317610562, 4.13288914e-09, 0.948221266)
-  	end    
-})
-
-QuestTab:AddButton({
-	Name = "Teleport to Final Gear",
-	Callback = function()
-        local rootPart = game.Players.LocalPlayer.Character.HumanoidRootPart
-        rootPart.CFrame = CFrame.new(-669.688232, 994.809998, -547.797852, 0.601038516, 7.08653447e-09, -0.799220026, -5.80119197e-09, 1, 4.50413484e-09, 0.799220026, 1.9292703e-09, 0.601038516)
-  	end    
+        local function teleportAndClick()
+            -- Acessar diretamente a parte no Workspace
+            local part = game:GetService("Workspace"):FindFirstChild("Riddles"):FindFirstChild("Gears"):FindFirstChild("Piece")
+            if part and part.ClassName == "MeshPart" then
+                -- Teleportar o jogador para a posição da peça
+                local player = game.Players.LocalPlayer
+                if player and player.Character and player.Character:FindFirstChild("HumanoidRootPart") then
+                    player.Character.HumanoidRootPart.CFrame = part.CFrame
+                    
+                    -- Esperar um pequeno intervalo para garantir que a teletransportação foi concluída
+                    wait(0.3)
+                    
+                    -- Mudar o MaxActivationDistance do ClickDetector e clicar
+                    local clickDetector = part:FindFirstChild("ClickDetector")
+                    if clickDetector then
+                        clickDetector.MaxActivationDistance = 10000
+                        fireclickdetector(clickDetector)
+                        print("Success")
+                    end
+                end
+            end
+        end
+        
+        teleportAndClick()
+        
 })
 
 
