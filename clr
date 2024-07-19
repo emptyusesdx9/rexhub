@@ -1,0 +1,390 @@
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+
+local Window = OrionLib:MakeWindow({Name = "Clicker Legends Final v1.1 ｜ by rex", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+
+--main
+
+local AutoTab = Window:MakeTab({
+	Name = "🔧Auto Farm!",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local EggsTab = Window:MakeTab({
+	Name = "Eggs",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local QuestTab = Window:MakeTab({
+	Name = "DJ Boom Quest",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+local MiscTab = Window:MakeTab({
+	Name = "🪝Misc",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+-- tabs
+
+local Section = AutoTab:AddSection({
+	Name = "Auto Farm!"
+})
+
+-- sections
+
+AutoTab:AddButton({
+	Name = "Auto Click",
+	Callback = function()
+        while wait(0.1) do
+            game:GetService("ReplicatedStorage"):WaitForChild("Assets"):WaitForChild("Events"):WaitForChild("TapClick"):WaitForChild("RemoteEvent"):FireServer()
+            end
+  	end    
+})
+
+-- autotab shit
+
+local Section = EggsTab:AddSection({
+	Name = "Egg Teleports! (ALL AREAS NEEDED)"
+})
+--
+EggsTab:AddButton({
+	Name = "Teleport to 100K Egg",
+	Callback = function()
+        local rootPart = game.Players.LocalPlayer.Character.HumanoidRootPart
+        rootPart.CFrame = CFrame.new(63.3298149, 187.896622, -20.7252865, -0.739609241, 0, -0.673036695, 0, 1, 0, 0.673036695, 0, -0.739609241)
+  	end    
+})
+
+EggsTab:AddButton({
+	Name = "Teleport to Rift Egg",
+	Callback = function()
+        local rootPart = game.Players.LocalPlayer.Character.HumanoidRootPart
+        rootPart.CFrame = CFrame.new(-668.956238, 888.091919, -472.413544, -0.216338038, 0, 0.976318538, 0, 1, 0, -0.976318538, 0, -0.216338038)
+  	end    
+})
+
+local Section = EggsTab:AddSection({
+	Name = "to spam eggs u need to be closer to the egg."
+})
+
+EggsTab:AddButton({
+	Name = "Common 3x Spam",
+	Callback = function()
+        while wait(0.3) do
+            local args = {
+            [1] = "Common Egg",
+            [2] = 3,
+            [3] = true
+        }
+        
+        game:GetService("ReplicatedStorage"):WaitForChild("Assets"):WaitForChild("Events"):WaitForChild("PurchaseEgg"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
+        end
+  	end    
+})
+
+EggsTab:AddButton({
+	Name = "Common 5x Spam",
+	Callback = function()
+        while wait(0.3) do
+            local args = {
+            [1] = "Common Egg",
+            [2] = 5,
+            [3] = true
+        }
+        
+        game:GetService("ReplicatedStorage"):WaitForChild("Assets"):WaitForChild("Events"):WaitForChild("PurchaseEgg"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
+        end
+  	end    
+})
+
+EggsTab:AddButton({
+	Name = "Common 8x Spam",
+	Callback = function()
+        while wait(0.3) do
+            local args = {
+            [1] = "Common Egg",
+            [2] = 8,
+            [3] = true
+        }
+        
+        game:GetService("ReplicatedStorage"):WaitForChild("Assets"):WaitForChild("Events"):WaitForChild("PurchaseEgg"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
+        end
+  	end    
+})
+
+local Section = EggsTab:AddSection({
+	Name = "Sakura"
+})
+
+EggsTab:AddButton({
+	Name = "Sakura 3x Spam",
+	Callback = function()
+        while wait(0.3) do
+            local args = {
+            [1] = "Sakura Egg",
+            [2] = 3,
+            [3] = true
+        }
+        
+        game:GetService("ReplicatedStorage"):WaitForChild("Assets"):WaitForChild("Events"):WaitForChild("PurchaseEgg"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
+        end
+  	end    
+})
+
+EggsTab:AddButton({
+	Name = "Sakura 5x Spam",
+	Callback = function()
+        while wait(0.3) do
+            local args = {
+            [1] = "Sakura Egg",
+            [2] = 5,
+            [3] = true
+        }
+        
+        game:GetService("ReplicatedStorage"):WaitForChild("Assets"):WaitForChild("Events"):WaitForChild("PurchaseEgg"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
+        end
+  	end    
+})
+
+EggsTab:AddButton({
+	Name = "Sakura 8x Spam",
+	Callback = function()
+        while wait(0.3) do
+            local args = {
+            [1] = "Sakura Egg",
+            [2] = 8,
+            [3] = true
+        }
+        
+        game:GetService("ReplicatedStorage"):WaitForChild("Assets"):WaitForChild("Events"):WaitForChild("PurchaseEgg"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
+        end
+  	end    
+})
+
+local Section = EggsTab:AddSection({
+	Name = "100K"
+})
+
+EggsTab:AddButton({
+	Name = "100K 3x Spam",
+	Callback = function()
+        while wait(0.3) do
+            local args = {
+            [1] = "100K Egg",
+            [2] = 3,
+            [3] = true
+        }
+        
+        game:GetService("ReplicatedStorage"):WaitForChild("Assets"):WaitForChild("Events"):WaitForChild("PurchaseEgg"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
+        end
+  	end    
+})
+
+EggsTab:AddButton({
+	Name = "100K 5x Spam",
+	Callback = function()
+        while wait(0.3) do
+            local args = {
+            [1] = "100K Egg",
+            [2] = 5,
+            [3] = true
+        }
+        
+        game:GetService("ReplicatedStorage"):WaitForChild("Assets"):WaitForChild("Events"):WaitForChild("PurchaseEgg"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
+        end
+  	end    
+})
+
+
+EggsTab:AddButton({
+	Name = "100K 8x Spam",
+	Callback = function()
+        while wait(0.3) do
+            local args = {
+            [1] = "100K Egg",
+            [2] = 8,
+            [3] = true
+        }
+        
+        game:GetService("ReplicatedStorage"):WaitForChild("Assets"):WaitForChild("Events"):WaitForChild("PurchaseEgg"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
+        end
+  	end    
+})
+
+local Section = EggsTab:AddSection({
+	Name = "Rift"
+})
+
+EggsTab:AddButton({
+	Name = "Rift 3x Spam",
+	Callback = function()
+        while wait(0.3) do
+            local args = {
+            [1] = "Rift Egg",
+            [2] = 3,
+            [3] = true
+        }
+        
+        game:GetService("ReplicatedStorage"):WaitForChild("Assets"):WaitForChild("Events"):WaitForChild("PurchaseEgg"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
+        end
+  	end    
+})
+
+EggsTab:AddButton({
+	Name = "Rift 5x Spam",
+	Callback = function()
+        while wait(0.3) do
+            local args = {
+            [1] = "Rift Egg",
+            [2] = 5,
+            [3] = true
+        }
+        
+        game:GetService("ReplicatedStorage"):WaitForChild("Assets"):WaitForChild("Events"):WaitForChild("PurchaseEgg"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
+        end
+  	end    
+})
+
+EggsTab:AddButton({
+	Name = "Rift 8x Spam",
+	Callback = function()
+        while wait(0.3) do
+            local args = {
+            [1] = "Rift Egg",
+            [2] = 8,
+            [3] = true
+        }
+        
+        game:GetService("ReplicatedStorage"):WaitForChild("Assets"):WaitForChild("Events"):WaitForChild("PurchaseEgg"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
+        end
+  	end    
+})
+
+--eggs shit
+
+local Section = MiscTab:AddSection({
+	Name = "Misc!"
+})
+
+--misc shit
+
+MiscTab:AddButton({
+	Name = "Redeem All Codes",
+	Callback = function()
+        local args = {
+            [1] = "release"
+        }
+        
+     game:GetService("ReplicatedStorage"):WaitForChild("Assets"):WaitForChild("Events"):WaitForChild("RedeemCode"):WaitForChild("RemoteFunction"):InvokeServer(unpack(args))
+     wait(0.5)
+        local args = {
+                [1] = "Shadow"
+            }
+            
+     game:GetService("ReplicatedStorage"):WaitForChild("Assets"):WaitForChild("Events"):WaitForChild("RedeemCode"):WaitForChild("RemoteFunction"):InvokeServer(unpack(args))
+            wait(0.5)
+              local args = {
+                    [1] = "sorryforshutdown"
+                }
+                
+     game:GetService("ReplicatedStorage"):WaitForChild("Assets"):WaitForChild("Events"):WaitForChild("RedeemCode"):WaitForChild("RemoteFunction"):InvokeServer(unpack(args))
+                wait(0.5)
+                    local args = {
+                        [1] = "sorryforbugs"
+                    }
+                    
+                    game:GetService("ReplicatedStorage"):WaitForChild("Assets"):WaitForChild("Events"):WaitForChild("RedeemCode"):WaitForChild("RemoteFunction"):InvokeServer(unpack(args))
+                    wait(0.5)
+                        local args = {
+                            [1] = "update1"
+                        }
+                        
+                        game:GetService("ReplicatedStorage"):WaitForChild("Assets"):WaitForChild("Events"):WaitForChild("RedeemCode"):WaitForChild("RemoteFunction"):InvokeServer(unpack(args))
+                        wait(0.5)
+                            local args = {
+                                [1] = "sorry"
+                            }
+                            
+                            game:GetService("ReplicatedStorage"):WaitForChild("Assets"):WaitForChild("Events"):WaitForChild("RedeemCode"):WaitForChild("RemoteFunction"):InvokeServer(unpack(args))
+                            wait(0.5)
+                                local args = {
+                                    [1] = "cursed"
+                                }
+                                
+                                game:GetService("ReplicatedStorage"):WaitForChild("Assets"):WaitForChild("Events"):WaitForChild("RedeemCode"):WaitForChild("RemoteFunction"):InvokeServer(unpack(args))
+                                wait(0.5)
+                                    local args = {
+                                        [1] = "recon"
+                                    }
+                                    
+                                    game:GetService("ReplicatedStorage"):WaitForChild("Assets"):WaitForChild("Events"):WaitForChild("RedeemCode"):WaitForChild("RemoteFunction"):InvokeServer(unpack(args))
+                                    wait(0.5)
+                                        local args = {
+                                            [1] = "july"
+                                        }
+                                        
+                                        game:GetService("ReplicatedStorage"):WaitForChild("Assets"):WaitForChild("Events"):WaitForChild("RedeemCode"):WaitForChild("RemoteFunction"):InvokeServer(unpack(args))
+                                        wait(0.5)
+                                            local args = {
+                                                [1] = "mga"
+                                            }
+                                            
+                                            game:GetService("ReplicatedStorage"):WaitForChild("Assets"):WaitForChild("Events"):WaitForChild("RedeemCode"):WaitForChild("RemoteFunction"):InvokeServer(unpack(args))
+                                            wait(0.5)
+                                                local args = {
+                                                    [1] = "100k"
+                                                }
+                                                
+                                                game:GetService("ReplicatedStorage"):WaitForChild("Assets"):WaitForChild("Events"):WaitForChild("RedeemCode"):WaitForChild("RemoteFunction"):InvokeServer(unpack(args))   
+  	end    
+})
+--misc shit above
+
+QuestTab:AddButton({
+	Name = "Teleport to Quest NPC",
+	Callback = function()
+        local rootPart = game.Players.LocalPlayer.Character.HumanoidRootPart
+        rootPart.CFrame = CFrame.new(-785.140259, 882.183105, -778.013977, -0.499959469, 0, 0.866048813, 0, 1, 0, -0.866048813, 0, -0.499959469)
+  	end    
+})
+
+QuestTab:AddButton({
+	Name = "Auto Get Gear",
+	Callback = function()
+        local function teleportAndClick()
+            -- Acessar diretamente a parte no Workspace
+            local part = game:GetService("Workspace"):FindFirstChild("Riddles"):FindFirstChild("Gears"):FindFirstChild("Piece")
+            if part and part.ClassName == "MeshPart" then
+                -- Teleportar o jogador para a posição da peça
+                local player = game.Players.LocalPlayer
+                if player and player.Character and player.Character:FindFirstChild("HumanoidRootPart") then
+                    player.Character.HumanoidRootPart.CFrame = part.CFrame
+                    
+                    -- Esperar um pequeno intervalo para garantir que a teletransportação foi concluída
+                    wait(0.3)
+                    
+                    -- Mudar o MaxActivationDistance do ClickDetector e clicar
+                    local clickDetector = part:FindFirstChild("ClickDetector")
+                    if clickDetector then
+                        clickDetector.MaxActivationDistance = 10000
+                        fireclickdetector(clickDetector)
+                        print("Success")
+                        
+                        wait(0.3)
+                        local rootPart = game.Players.LocalPlayer.Character.HumanoidRootPart
+                        rootPart.CFrame = CFrame.new(-785.140259, 882.183105, -778.013977, -0.499959469, 0, 0.866048813, 0, 1, 0, -0.866048813, 0, -0.499959469)
+                    end
+                end
+            end
+        end
+        
+        teleportAndClick()
+        
+})
+
+
+OrionLib:Init()
