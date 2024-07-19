@@ -379,7 +379,7 @@ QuestTab:AddButton({
         end
         
         teleportAndClick()
-        
+        end
 })
 
 
