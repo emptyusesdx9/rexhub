@@ -1,6 +1,6 @@
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 
-local Window = OrionLib:MakeWindow({Name = "Clicker Legends Final ｜ by rex", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+local Window = OrionLib:MakeWindow({Name = "Clicker Legends Final v1.2 ｜ by rex", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
 
 --main
 
