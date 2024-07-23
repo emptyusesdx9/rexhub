@@ -1,6 +1,6 @@
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 
-local Window = OrionLib:MakeWindow({Name = "Clicker Legends Final v1.2 ｜ by rex", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+local Window = OrionLib:MakeWindow({Name = " (250K) Clicker Legends Final v1.5 ｜ by rex", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
 
 --main
 
@@ -52,10 +52,10 @@ local Section = EggsTab:AddSection({
 })
 --
 EggsTab:AddButton({
-	Name = "Teleport to Rainbow Egg",
+	Name = "Teleport to Newest Egg",
 	Callback = function()
         local rootPart = game.Players.LocalPlayer.Character.HumanoidRootPart
-        rootPart.CFrame = CFrame.new(63.3298149, 187.896622, -20.7252865, -0.739609241, 0, -0.673036695, 0, 1, 0, 0.673036695, 0, -0.739609241)
+        rootPart.CFrame = CFrame.new(147.505447, 189.593277, -63.8362999, -0.978144407, 0, -0.207926437, 0, 1, 0, 0.207926437, 0, -0.978144407)
   	end    
 })
 
@@ -216,15 +216,15 @@ EggsTab:AddButton({
 })
 
 local Section = EggsTab:AddSection({
-	Name = "100K Egg (BAN RISK)"
+	Name = "250K Egg"
 })
 
 EggsTab:AddButton({
-	Name = "100K 3x Spam",
+	Name = "250K 3x Spam",
 	Callback = function()
         while wait(0.3) do
             local args = {
-            [1] = "100K Egg",
+            [1] = "250K Egg",
             [2] = 3,
             [3] = true
         }
@@ -235,7 +235,22 @@ EggsTab:AddButton({
 })
 
 EggsTab:AddButton({
-	Name = "100K 8x Spam",
+	Name = "250K 5x Spam",
+	Callback = function()
+        while wait(0.3) do
+            local args = {
+            [1] = "100K Egg",
+            [2] = 5,
+            [3] = true
+        }
+        
+        game:GetService("ReplicatedStorage"):WaitForChild("Assets"):WaitForChild("Events"):WaitForChild("PurchaseEgg"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
+        end
+  	end    
+})
+
+EggsTab:AddButton({
+	Name = "250K 8x Spam",
 	Callback = function()
         while wait(0.3) do
             local args = {
@@ -380,7 +395,13 @@ MiscTab:AddButton({
                                                     [1] = "comp"
                                                 }
                                                 
-                                                game:GetService("ReplicatedStorage"):WaitForChild("Assets"):WaitForChild("Events"):WaitForChild("RedeemCode"):WaitForChild("RemoteFunction"):InvokeServer(unpack(args))   
+                                                game:GetService("ReplicatedStorage"):WaitForChild("Assets"):WaitForChild("Events"):WaitForChild("RedeemCode"):WaitForChild("RemoteFunction"):InvokeServer(unpack(args))
+                                                wait(0.5)
+                                                local args = {
+                                                    [1] = "250k"
+                                                }
+                                                
+                                                game:GetService("ReplicatedStorage"):WaitForChild("Assets"):WaitForChild("Events"):WaitForChild("RedeemCode"):WaitForChild("RemoteFunction"):InvokeServer(unpack(args))
   	end    
 })
 --misc shit above
