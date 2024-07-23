@@ -189,7 +189,7 @@ EggsTab:AddButton({
 	Callback = function()
         while wait(0.3) do
             local args = {
-            [1] = "100K Egg",
+            [1] = "Rainbow Egg",
             [2] = 5,
             [3] = true
         }
@@ -205,6 +205,40 @@ EggsTab:AddButton({
 	Callback = function()
         while wait(0.3) do
             local args = {
+            [1] = "Rainbow Egg",
+            [2] = 8,
+            [3] = true
+        }
+        
+        game:GetService("ReplicatedStorage"):WaitForChild("Assets"):WaitForChild("Events"):WaitForChild("PurchaseEgg"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
+        end
+  	end    
+})
+
+local Section = EggsTab:AddSection({
+	Name = "100K Egg (BAN RISK)"
+})
+
+EggsTab:AddButton({
+	Name = "100K 3x Spam",
+	Callback = function()
+        while wait(0.3) do
+            local args = {
+            [1] = "100K Egg",
+            [2] = 3,
+            [3] = true
+        }
+        
+        game:GetService("ReplicatedStorage"):WaitForChild("Assets"):WaitForChild("Events"):WaitForChild("PurchaseEgg"):WaitForChild("RemoteEvent"):FireServer(unpack(args))
+        end
+  	end    
+})
+
+EggsTab:AddButton({
+	Name = "100K 8x Spam",
+	Callback = function()
+        while wait(0.3) do
+            local args = {
             [1] = "100K Egg",
             [2] = 8,
             [3] = true
@@ -214,6 +248,7 @@ EggsTab:AddButton({
         end
   	end    
 })
+
 
 local Section = EggsTab:AddSection({
 	Name = "Rift"
