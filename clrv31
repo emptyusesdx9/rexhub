@@ -239,7 +239,7 @@ EggsTab:AddButton({
 	Callback = function()
         while wait(0.3) do
             local args = {
-            [1] = "100K Egg",
+            [1] = "250K Egg",
             [2] = 5,
             [3] = true
         }
@@ -254,7 +254,7 @@ EggsTab:AddButton({
 	Callback = function()
         while wait(0.3) do
             local args = {
-            [1] = "100K Egg",
+            [1] = "250K Egg",
             [2] = 8,
             [3] = true
         }
